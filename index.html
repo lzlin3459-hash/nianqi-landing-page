@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>念启科技 Nianqi Technology | AI自动化服务</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  </head>
+  <body>
+    <!-- Background Elements -->
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <div class="mesh-bg"></div>
+
+    <header class="navbar">
+      <div class="logo">
+        <i class="ph ph-hexagon-fill"></i>
+        <span>念启科技 <span class="logo-accent">AI</span></span>
+      </div>
+      <nav class="nav-links">
+        <a href="#features">核心服务</a>
+        <a href="#about">关于我们</a>
+        <a href="#waitlist" class="btn-outline">加入清单</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-content">
+          <div class="badge">🚀 下一代企业AI解决方案</div>
+          <h1 class="hero-title">释放AI力量<br>重塑<span class="gradient-text">业务流程</span></h1>
+          <p class="hero-subtitle">
+            念启科技（Nianqi Technology）为您提供全定制化的AI自动化服务，将人工干预降至最低，让您的企业在智能时代遥遥领先。
+          </p>
+          
+          <div id="waitlist" class="waitlist-card glass-panel">
+            <h3>优先体验名额预留</h3>
+            <p>加入等待名单，获取内测首发资格及定制方案咨询。</p>
+            <form id="waitlist-form" class="waitlist-form">
+              <div class="input-group">
+                <i class="ph ph-envelope"></i>
+                <input type="email" id="email" placeholder="您的企业邮箱地址" required />
+              </div>
+              <button type="submit" class="btn-primary">
+                <span>加入等待名单</span>
+                <i class="ph ph-arrow-right"></i>
+              </button>
+            </form>
+            <div id="success-message" class="success-message hidden">
+              <i class="ph ph-check-circle"></i>
+              <span>感谢您的加入！我们将尽快与您取得联系。</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="hero-visual">
+          <div class="glass-orb-container">
+            <div class="glass-orb"></div>
+            <div class="floating-card card-1"><i class="ph ph-robot"></i> 智能客服已托管</div>
+            <div class="floating-card card-2"><i class="ph ph-lightning"></i> 流程效率 +300%</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="features-section">
+        <h2 class="section-title">核心<span class="gradient-text">自动化服务</span></h2>
+        <div class="features-grid">
+          <div class="feature-card glass-panel observe-slide">
+            <div class="feature-icon"><i class="ph ph-headset"></i></div>
+            <h3>全天候智能客服</h3>
+            <p>基于大语言模型的客服机器人，24小时无缝衔接客户咨询，解答精确度高达99%。</p>
+          </div>
+          <div class="feature-card glass-panel observe-slide delay-1">
+            <div class="feature-icon"><i class="ph ph-git-merge"></i></div>
+            <h3>企业工作流自动化</h3>
+            <p>从数据录入到跨平台信息同步，完全自动化您的内部业务流，释放员工潜力。</p>
+          </div>
+          <div class="feature-card glass-panel observe-slide delay-2">
+            <div class="feature-icon"><i class="ph ph-chart-polar"></i></div>
+            <h3>深度数据洞察</h3>
+            <p>通过AI对海量业务数据进行结构化分析，自动生成商业报表并提供前瞻性建议。</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="logo">
+          <i class="ph ph-hexagon-fill"></i>
+          <span>念启科技</span>
+        </div>
+        <p>© 2026 念启科技 Nianqi Technology. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
