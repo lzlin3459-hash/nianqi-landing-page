@@ -5,27 +5,45 @@ document.addEventListener('DOMContentLoaded', () => {
   const emailInput = document.getElementById('email');
 
   if (form) {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
       
       const email = emailInput.value.trim();
       
       if (email) {
-        // Here you would typically send the data to a backend via fetch/axios
-        // For now, we just simulate a successful UI state
-        
-        // Disable form to prevent multiple submissions
         const btn = form.querySelector('button');
-        btn.disabled = true;
-        btn.innerHTML = '<i class="ph ph-spinner ph-spin"></i> <span>处理中...</span>';
+        const originalBtnHTML = btn.innerHTML;
         
-        // Simulate network request
-        setTimeout(() => {
-          form.classList.add('hidden');
-          successMessage.classList.remove('hidden');
+        // UI Feedback: Loading state
+        btn.disabled = true;
+        btn.innerHTML = '<i class="ph ph-spinner ph-spin"></i> <span>发送中...</span>';
+        
+        try {
+          const response = await fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: {
+              'Accept': 'application/json'
+            }
+          });
           
-          // Confetti or visual success feedback can be added here
-        }, 1000);
+          if (response.ok) {
+            // Success State
+            form.classList.add('hidden');
+            successMessage.classList.remove('hidden');
+          } else {
+            // Error handling
+            const data = await response.json();
+            alert(data.errors ? data.errors.map(error => error.message).join(", ") : "发送失败，请稍后重试。");
+            btn.disabled = false;
+            btn.innerHTML = originalBtnHTML;
+          }
+        } catch (error) {
+          console.error('Submission error:', error);
+          alert("网络错误，请检查您的连接。");
+          btn.disabled = false;
+          btn.innerHTML = originalBtnHTML;
+        }
       }
     });
   }
