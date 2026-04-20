@@ -2,9 +2,13 @@
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2003/svg' viewBox='0 0 256 256'%3E%3Crect width='256' height='256' fill='none'/%3E%3Cpath d='M224,128,176,211.2H80L32,128,80,44.8h96Z' fill='none' stroke='%2300f2fe' stroke-linecap='round' stroke-linejoin='round' stroke-width='16'/%3E%3C/svg%3E" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>念启科技 Nianqi Technology | AI自动化服务</title>
+    <title>念启科技 Nianqi Technology | 领先的企业级 AI 自动化专家</title>
+    <meta name="description" content="念启科技致力于为企业提供全方位的 AI 自动化解决方案。助力企业实现数字化转型与效率倍增。" />
+    <meta name="keywords" content="念启科技, AI自动化, 智能客服, RPA, 流程自动化, 企业AI转型" />
+    <meta property="og:title" content="念启科技 - 释放 AI 力量，重塑业务流程" />
+    <meta property="og:type" content="website" />
     <link rel="stylesheet" href="/style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
@@ -23,7 +27,10 @@
       <nav class="nav-links">
         <a href="#features">核心服务</a>
         <a href="#about">关于我们</a>
-        <a href="#waitlist" class="btn-outline">加入清单</a>
+        <a href="#waitlist" class="btn-cta">
+          <span>加入清单</span>
+          <i class="ph ph-sparkle"></i>
+        </a>
       </nav>
     </header>
 
@@ -57,8 +64,18 @@
         </div>
         
         <div class="hero-visual">
-          <div class="glass-orb-container">
-            <div class="glass-orb"></div>
+          <div class="tech-core-container">
+            <div class="core-layer layer-1"></div>
+            <div class="core-layer layer-2"></div>
+            <div class="core-layer layer-3"></div>
+            <div class="central-glow"></div>
+            
+            <!-- Nodes -->
+            <div class="floating-node node-1" style="--d: 0s"><i class="ph ph-cpu"></i></div>
+            <div class="floating-node node-2" style="--d: -2s"><i class="ph ph-database"></i></div>
+            <div class="floating-node node-3" style="--d: -4s"><i class="ph ph-brackets-curly"></i></div>
+          </div>
+          <div class="floating-cards">
             <div class="floating-card card-1"><i class="ph ph-robot"></i> 智能客服已托管</div>
             <div class="floating-card card-2"><i class="ph ph-lightning"></i> 流程效率 +300%</div>
           </div>
@@ -66,22 +83,140 @@
       </section>
 
       <section id="features" class="features-section">
-        <h2 class="section-title">核心<span class="gradient-text">自动化服务</span></h2>
-        <div class="features-grid">
-          <div class="feature-card glass-panel observe-slide">
+        <div class="section-header observe-fade-up">
+          <div class="badge">CAPABILITIES</div>
+          <h2 class="section-title">核心<span class="gradient-text">自动化服务</span></h2>
+          <p class="section-subtitle">通过自研 AI 引擎，为企业构建多维度的智能自动化底座</p>
+        </div>
+        <div class="features-grid stagger-container">
+          <div class="feature-card glass-panel observe-fade-up">
             <div class="feature-icon"><i class="ph ph-headset"></i></div>
-            <h3>全天候智能客服</h3>
-            <p>基于大语言模型的客服机器人，24小时无缝衔接客户咨询，解答精确度高达99%。</p>
+            <div class="feature-content">
+              <h3>全天候智能客服</h3>
+              <p>基于大语言模型的客服机器人，24小时无缝衔接客户咨询，解答精确度高达99%。</p>
+              <ul class="feature-tags">
+                <li>多轮对话</li>
+                <li>情感分析</li>
+              </ul>
+            </div>
           </div>
-          <div class="feature-card glass-panel observe-slide delay-1">
+          <div class="feature-card glass-panel observe-fade-up">
             <div class="feature-icon"><i class="ph ph-git-merge"></i></div>
-            <h3>企业工作流自动化</h3>
-            <p>从数据录入到跨平台信息同步，完全自动化您的内部业务流，释放员工潜力。</p>
+            <div class="feature-content">
+              <h3>企业工作流自动化</h3>
+              <p>从数据录入到跨平台信息同步，完全自动化您的内部业务流，释放员工潜力。</p>
+              <ul class="feature-tags">
+                <li>RPA集成</li>
+                <li>API联动</li>
+              </ul>
+            </div>
           </div>
-          <div class="feature-card glass-panel observe-slide delay-2">
+          <div class="feature-card glass-panel observe-fade-up">
             <div class="feature-icon"><i class="ph ph-chart-polar"></i></div>
-            <h3>深度数据洞察</h3>
-            <p>通过AI对海量业务数据进行结构化分析，自动生成商业报表并提供前瞻性建议。</p>
+            <div class="feature-content">
+              <h3>深度数据洞察</h3>
+              <p>通过AI对海量业务数据进行结构化分析，自动生成商业报表并提供前瞻性建议。</p>
+              <ul class="feature-tags">
+                <li>趋势预测</li>
+                <li>报表自动生成</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="about-section">
+        <div class="about-container glass-panel observe-fade-up">
+          <div class="about-visual">
+            <div class="dna-line"></div>
+            <div class="tech-stack-icons">
+              <i class="ph ph-brain"></i>
+              <i class="ph ph-circuitry"></i>
+              <i class="ph ph-cloud-check"></i>
+            </div>
+          </div>
+          <div class="about-content">
+            <div class="badge">ABOUT US</div>
+            <h2 class="section-title text-left">让 AI 成为企业的<br><span class="gradient-text">数字基因</span></h2>
+            <p class="about-text">
+              念启科技（Nianqi Technology）诞生于智能变革的前夜。我们坚信，未来的企业不应被琐碎的任务束缚。我们致力于将尖端的 AI 实验室技术转化为可落地的企业生产力，通过深度定制化方案，帮助每一家企业构建属于自己的数字员工矩阵。
+            </p>
+            <div class="about-stats">
+              <div class="stat-item">
+                <span class="stat-num">50+</span>
+                <span class="stat-label">行业解决方案</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-num">98%</span>
+                <span class="stat-label">客户降本率</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="diagnosis" class="diagnosis-section">
+        <div class="diagnosis-container glass-panel">
+          <div class="diagnosis-content">
+            <div class="badge">FREE DIAGNOSIS</div>
+            <h2 class="section-title text-left">立即开启<br><span class="gradient-text">免费 AI 业务诊断</span></h2>
+            <p class="section-desc">
+              告诉我们您当前的业务痛点，念启科技的专家团队将为您量身定制专属的 AI 自动化升级方案。
+            </p>
+            
+            <ul class="advantage-list">
+              <li class="advantage-item">
+                <i class="ph ph-lightning"></i>
+                <div>
+                  <h4>极大提升运营效率</h4>
+                  <p>将重复性人天降至分钟级执行</p>
+                </div>
+              </li>
+              <li class="advantage-item">
+                <i class="ph ph-clock-countdown"></i>
+                <div>
+                  <h4>24/7 全天候价值产出</h4>
+                  <p>无需休息，时刻响应业务需求</p>
+                </div>
+              </li>
+              <li class="advantage-item">
+                <i class="ph ph-shield-check"></i>
+                <div>
+                  <h4>极高执行精准度</h4>
+                  <p>消除人工操作带来的逻辑偏误</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="diagnosis-form-container">
+            <form id="diagnosis-form" class="diagnosis-form" action="https://formspree.io/f/mjgjorje" method="POST">
+              <div class="input-field">
+                <label for="wechat">微信号 (WeChat ID)</label>
+                <div class="input-wrapper">
+                  <i class="ph ph-wechat-logo"></i>
+                  <input type="text" id="wechat" name="wechat" placeholder="便于我们与您深度沟通" required />
+                </div>
+              </div>
+              
+              <div class="input-field">
+                <label for="email-diag">电子邮箱 (Email)</label>
+                <div class="input-wrapper">
+                  <i class="ph ph-envelope"></i>
+                  <input type="email" id="email-diag" name="email" placeholder="接收初步诊断报告" required />
+                </div>
+              </div>
+
+              <div class="input-field">
+                <label for="message">业务痛点描述 (可选)</label>
+                <textarea id="message" name="message" placeholder="简述您希望被自动化的业务环节..."></textarea>
+              </div>
+
+              <button type="submit" class="btn-primary w-full">
+                <span>提交预约申请</span>
+                <i class="ph ph-paper-plane-tilt"></i>
+              </button>
+            </form>
           </div>
         </div>
       </section>

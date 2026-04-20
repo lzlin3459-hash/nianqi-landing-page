@@ -49,23 +49,72 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Scroll Reveal Animations
+  // Advanced Scroll Reveal Animations
   const observerOptions = {
     root: null,
     rootMargin: '0px',
-    threshold: 0.2
+    threshold: 0.15
   };
 
-  const observer = new IntersectionObserver((entries, observer) => {
+  const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-        observer.unobserve(entry.target); // Run animation once
+        if (entry.target.classList.contains('stagger-container')) {
+          // Handle staggered children
+          const children = entry.target.querySelectorAll('.observe-fade-up');
+          children.forEach((child, index) => {
+            setTimeout(() => {
+              child.classList.add('is-visible');
+            }, index * 150); // 150ms delay between items
+          });
+        } else {
+          entry.target.classList.add('is-visible');
+        }
+        revealObserver.unobserve(entry.target);
       }
     });
   }, observerOptions);
 
-  document.querySelectorAll('.observe-slide').forEach(element => {
-    observer.observe(element);
+  // Observe containers and single elements
+  document.querySelectorAll('.stagger-container, .observe-fade-up, .observe-slide').forEach(element => {
+    revealObserver.observe(element);
+  });
+
+  // Smooth Navigation with Easing
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        window.scrollTo({
+          top: target.offsetTop - 80, // Offset for navbar
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+
+  // Micro-Parallax for Neural Core Nodes
+  const techCore = document.querySelector('.tech-core-container');
+  if (techCore) {
+    window.addEventListener('mousemove', (e) => {
+      const x = (e.clientX / window.innerWidth - 0.5) * 30;
+      const y = (e.clientY / window.innerHeight - 0.5) * 30;
+      techCore.style.transform = `translate(${x}px, ${y}px)`;
+    });
+  }
+
+  // Smooth background evolve on scroll
+  window.addEventListener('scroll', () => {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+      navbar.style.padding = '0.8rem 5%';
+      navbar.style.background = 'rgba(10, 10, 12, 0.9)';
+      navbar.style.boxShadow = '0 10px 40px rgba(0,0,0,0.5)';
+    } else {
+      navbar.style.padding = '1.25rem 5%';
+      navbar.style.background = 'rgba(10, 10, 12, 0.7)';
+      navbar.style.boxShadow = 'none';
+    }
   });
 });
