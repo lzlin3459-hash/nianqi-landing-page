@@ -1,3 +1,4 @@
+// Formspree live integration v2.0.1
 document.addEventListener('DOMContentLoaded', () => {
   // Waitlist Form Handler
   const form = document.getElementById('waitlist-form');
