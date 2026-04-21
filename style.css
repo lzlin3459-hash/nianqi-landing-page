@@ -861,3 +861,31 @@ footer {
     display: none;
   }
 }
+
+/* Mobile Performance Optimizations */
+@media (max-width: 768px) {
+  .bg-orb {
+    filter: blur(40px); /* Significant rendering relief */
+    opacity: 0.3;
+  }
+  
+  .central-glow {
+    filter: blur(15px);
+    box-shadow: 0 0 30px var(--accent-blue);
+  }
+  
+  .glass-panel, 
+  .floating-card,
+  .navbar {
+    backdrop-filter: blur(8px) !important; /* Half the intensity for mobile */
+    -webkit-backdrop-filter: blur(8px) !important;
+  }
+
+  .tech-core-container {
+    transform: scale(0.8); /* Scale down visual core for mobile */
+  }
+
+  .mesh-bg {
+    display: none; /* Hide expensive translucent mesh on mobile */
+  }
+}
